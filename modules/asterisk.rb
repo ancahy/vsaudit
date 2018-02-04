@@ -213,7 +213,7 @@ module AsteriskModule
                         ]
 
                         puts "  + %-22s extension '#{GB}%s#{RST}' enabled\t[#{GB}no auth#{RST}]" % [paddr, e]
-                    elsif buf.to_s.include?('403 Forbidden')
+                    elsif buf.to_s.include?('403 Forbidden') || buf.to_s.include?('401 Unauthorized')
                         tmp = [
                             :extension_value    => e.to_s,
                             :extension_address  => address.to_s,
